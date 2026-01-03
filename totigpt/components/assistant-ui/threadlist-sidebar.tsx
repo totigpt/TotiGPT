@@ -24,7 +24,7 @@ export function ThreadListSidebar({
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
                <Link
-                  href="https://NovaAI.com"
+                  href="https://toti-gpt.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
