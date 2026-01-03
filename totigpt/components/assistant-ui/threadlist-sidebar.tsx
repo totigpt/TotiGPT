@@ -47,27 +47,22 @@ export function ThreadListSidebar({
       </SidebarContent>
       <SidebarRail />
       <SidebarFooter className="aui-sidebar-footer border-t">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <Link
-                href="https://github.com/assistant-ui/assistant-ui"
-                target="_blank"
-              >
-                <div className="aui-sidebar-footer-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Github className="aui-sidebar-footer-icon size-4" />
-                </div>
-                <div className="aui-sidebar-footer-heading flex flex-col gap-0.5 leading-none">
-                  <span className="aui-sidebar-footer-title font-semibold">
-                    GitHub
-                  </span>
-                  <span>View Source</span>
-                </div>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
+  <SidebarMenu>
+    <SidebarMenuItem>
+      <SidebarMenuButton size="lg" asChild>
+        <div className="flex flex-col items-center justify-center p-2">
+          <img
+            src="/logo.png"        // <-- Put your logo image in /public/logo.png
+            alt="MyAI Logo"
+            className="w-10 h-10 mb-1 rounded-full"
+          />
+          <span className="font-semibold text-sm">MyAI Assistant</span>
+        </div>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
+  </SidebarMenu>
+</SidebarFooter>
+
     </Sidebar>
   );
 }
