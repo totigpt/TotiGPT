@@ -724,3 +724,91 @@ export {
   SidebarTrigger,
   useSidebar,
 };
+"use client";
+
+import { useChatStore } from "@/lib/chatStore";
+import { useState } from "react";
+
+export default function SearchBar() {
+  const { chats, setActiveChat } = useChatStore();
+  const [query, setQuery] = useState("");
+
+  const results = chats.filter((chat) =>
+    chat.messages.some((m) =>
+      m.content.toLowerCase().includes(query.toLowerCase())
+    )
+  );
+
+  return (
+    <>
+      <input
+        placeholder="Search chats..."
+        className="w-full p-2 border rounded mb-2"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+
+      {query &&
+        results.map((chat) => (
+          <div
+            key={chat.id}
+            onClick={() => setActiveChat(chat.id)}
+            className="cursor-pointer p-2 hover:bg-gray-100"
+          >
+            {chat.title}
+          </div>
+        ))}
+    </>
+  );
+}
+"use client";
+
+import { useChatStore } from "@/lib/chatStore";
+
+export default function Sidebar() {
+  const { chats, newChat, setActiveChat, activeChatId } = useChatStore();
+
+  return (
+    <aside className="w-64 border-r p-3">
+      <button
+        onClick={newChat}
+        className="w-full mb-4 rounded bg-black text-white py-2"
+      >
+        ➕ New Chat
+      </button>
+
+      {chats.map((chat) => (
+        <div
+          key={chat.id}
+          onClick={() => setActiveChat(chat.id)}
+          className={`p-2 cursor-pointer rounded ${
+            chat.id === activeChatId ? "bg-gray-200" : ""
+          }`}
+        >
+          {chat.title}
+        </div>
+      ))}
+    </aside>
+  );
+}
+"use client";
+
+import { useChatStore } from "@/lib/chatStore";
+
+export default function ChatWindow() {
+  const { chats, activeChatId, addMessage } = useChatStore();
+  const chat = chats.find((c) => c.id === activeChatId);
+
+  if (!chat) return <div className="flex-1 p-4">Start a new chat</div>;
+
+  return (
+    <div className="flex-1 p-4">
+      {chat.messages.map((msg, i) => (
+        <div key={i} className="mb-2">
+          <b>{msg.role}:</b> {msg.content}
+        </div>
+      ))}
+    </div>
+  );
+}
+
