@@ -53,10 +53,10 @@ export function ThreadListSidebar({
         <div className="flex flex-col items-center justify-center p-2">
           <img
             src="/logo.png"        // <-- Put your logo image in /public/logo.png
-            alt="MyAI Logo"
+            alt="NovaAI"
             className="w-10 h-10 mb-1 rounded-full"
           />
-          <span className="font-semibold text-sm">MyAI Assistant</span>
+          <span className="font-semibold text-sm">NovaAI</span>
         </div>
       </SidebarMenuButton>
     </SidebarMenuItem>
