@@ -23,11 +23,11 @@ export function ThreadListSidebar({
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
-                <Link
-                  href="https://NovaAI.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+               <img
+            src="/Nova.png"        // <-- Put your logo image in /public/logo.png
+            alt="NovaAI"
+            className="w-10 h-10 mb-1 rounded-full"
+          />
                   <div className="aui-sidebar-header-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                     <MessagesSquare className="aui-sidebar-header-icon size-4" />
                   </div>
