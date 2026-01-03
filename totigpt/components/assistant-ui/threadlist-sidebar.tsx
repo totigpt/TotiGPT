@@ -28,13 +28,12 @@ export function ThreadListSidebar({
                   target="_blank"
                   rel="noopener noreferrer"
                >
-
                   <div className="aui-sidebar-header-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                     <MessagesSquare className="aui-sidebar-header-icon size-4" />
                   </div>
                   <div className="aui-sidebar-header-heading mr-6 flex flex-col gap-0.5 leading-none">
-                    <span className="aui-sidebar-header-title font-semibold">
-                      NovaAI
+                    <span className="aui-sidebar-header-title font-semibold"
+                    https://toti-gpt.vercel.app  
                     </span>
                   </div>
                 </Link>
