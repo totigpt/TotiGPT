@@ -27,7 +27,8 @@ export function ThreadListSidebar({
                   href="https://toti-gpt.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+               >
+
                   <div className="aui-sidebar-header-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                     <MessagesSquare className="aui-sidebar-header-icon size-4" />
                   </div>
